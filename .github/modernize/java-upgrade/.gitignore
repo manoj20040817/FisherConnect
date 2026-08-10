@@ -1,0 +1,19 @@
+# Backend
+backend/target/
+backend/.idea/
+*.class
+*.jar
+*.war
+*.iml
+
+# Frontend (if you later add node_modules)
+frontend/node_modules/
+
+# Environment & IDE
+.env
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,88 @@
+2026-08-10T09:27:35.168Z [INFO] ----------------------invoke appmod-list-jdks----------------------
+2026-08-10T09:27:35.169Z [INFO] [Tool.invoke]({name: appmod-list-jdks, modelId: auto, input: {
+  "sessionId": "",
+  "additionalSearchPaths": [
+    "d:\\\\Documents\\\\FisherConnect"
+  ],
+  "projectPath": "d:\\Documents\\FisherConnect"
+}}).
+2026-08-10T09:27:35.170Z [INFO] [Tool.invoke] do invoke.
+2026-08-10T09:27:35.239Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following jdks in your system:\n\n1. Java 18.0.1.1\n   📁 Path: C:\\Program Files\\Java\\jdk-18.0.1.1\\bin\n   🏷️ Source: PATH\n\n2. Java 25.0.2\n   📁 Path: C:\\Users\\manoj\\.jdk\\jdk-25.0.2\\bin\n   🏷️ Source: others\n\n3. Java 26.0.1\n   📁 Path: C:\\Program Files\\Java\\jdk-26.0.1\\bin\n   🏷️ Source: others\n\nTotal: 3 JDK installation(s) found"
+}}).
+2026-08-10T09:27:35.240Z [INFO] ----------------------invoked appmod-list-jdks----------------------
+2026-08-10T09:27:35.465Z [INFO] ----------------------invoke appmod-list-mavens----------------------
+2026-08-10T09:27:35.466Z [INFO] [Tool.invoke]({name: appmod-list-mavens, modelId: auto, input: {
+  "sessionId": "",
+  "additionalSearchPaths": [
+    "d:\\\\Documents\\\\FisherConnect"
+  ],
+  "projectPath": "d:\\Documents\\FisherConnect"
+}}).
+2026-08-10T09:27:35.466Z [INFO] [Tool.invoke] do invoke.
+2026-08-10T09:27:35.483Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following maven installations in your system:\n\n1. 📁 Path: D:\\tools\\apache-maven-3.9.16\\bin\n   🏷️ Source: MAVEN_HOME,PATH\n\nTotal: 1 Maven installation(s) found"
+}}).
+2026-08-10T09:27:35.484Z [INFO] ----------------------invoked appmod-list-mavens----------------------
+2026-08-10T09:27:42.539Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-08-10T09:27:42.540Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "sessionId": "",
+  "projectPath": "d:\\Documents\\FisherConnect\\backend",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "25",
+        "targetVersion": "25"
+      },
+      {
+        "name": "spring-boot",
+        "baseVersion": "3.5.5",
+        "targetVersion": "3.5.5"
+      }
+    ]
+  }
+}}).
+2026-08-10T09:27:42.540Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-08-10T09:27:42.540Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-08-10T09:27:42.540Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-08-10T09:27:42.592Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-08-10T09:27:42.592Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: auto, input: {
+  "sessionId": "",
+  "projectPath": "d:\\Documents\\FisherConnect\\backend",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "25",
+        "targetVersion": "25"
+      },
+      {
+        "name": "spring-boot",
+        "baseVersion": "3.5.5",
+        "targetVersion": "3.5.5"
+      }
+    ]
+  }
+}}).
+2026-08-10T09:27:42.592Z [INFO] [Tool.invoke] do invoke.
+2026-08-10T09:27:42.594Z [INFO] Project d:\Documents\FisherConnect is not a maven project, try to get java version from gradle
+2026-08-10T09:27:42.599Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'precheckCompleted' reported!\nSession ID: 20260810092735,\nSession Dir: d:\\Documents\\FisherConnect\\.github\\modernize\\java-upgrade\\20260810092735"
+}}).
+2026-08-10T09:27:42.599Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-08-10T09:27:42.619Z [INFO] Try to get java version from gradle config files: 
+2026-08-10T09:27:42.620Z [INFO] Try to get java version from gradle properties: undefined
+2026-08-10T09:27:42.620Z [INFO] Project java version: 8
+2026-08-10T09:27:42.685Z [WARN] [ReportEventTool] Full project info unavailable, attempting lightweight fallback: UserError: Failed to detect build tool for the project at d:\Documents\FisherConnect. There are child Maven/Gradle projects detected: "backend". Would you like to use one of them instead?
+2026-08-10T09:27:42.686Z [INFO] Project d:\Documents\FisherConnect is not a maven project, try to get java version from gradle
+2026-08-10T09:27:42.694Z [INFO] Try to get java version from gradle config files: 
+2026-08-10T09:27:42.694Z [INFO] Try to get java version from gradle properties: undefined
