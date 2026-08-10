@@ -9,11 +9,14 @@ backend/.idea/
 # Frontend (if you later add node_modules)
 frontend/node_modules/
 
-# Environment & IDE
+# Environment & sensitive files
 .env
+backend/src/main/resources/application.properties
+
+# IDE
 .vscode/
 .idea/
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
