@@ -2054,6 +2054,51 @@
               }
             };
           }
+          // Register form
+          const registerForm = document.getElementById("register-form");
+
+          if (registerForm) {
+            registerForm.onsubmit = async function (e) {
+              e.preventDefault();
+
+              const name = document.getElementById("reg-name").value.trim();
+              const email = document.getElementById("reg-email").value.trim();
+              const phone = document.getElementById("reg-phone").value.trim();
+              const password = document.getElementById("reg-password").value;
+              const role = document.getElementById("reg-role").value;
+
+              if (!name || !email || !phone || !password || !role) {
+                showToast("Please fill all fields", "error");
+                return;
+              }
+
+              try {
+                showToast("Creating your account...");
+
+                const data = await apiFetch("/auth/register", {
+                  method: "POST",
+                  body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    password: password,
+                    role: role,
+                  }),
+                });
+
+                console.log("Registration response:", data);
+
+                showToast("Registration successful! Please login.");
+
+                setTimeout(() => {
+                  navigate("login");
+                }, 1000);
+              } catch (err) {
+                console.error("Registration error:", err);
+                showToast("Registration failed: " + err.message, "error");
+              }
+            };
+          }
         }
 
         // --- GLOBAL FUNCTIONS (attached to window for onclick) ---
