@@ -1,14 +1,19 @@
 package com.fisherconnect.controller;
 
-import com.fisherconnect.entity.User;
-import com.fisherconnect.repository.UserRepository;
-import com.fisherconnect.security.JwtUtil;
+import java.time.LocalDateTime;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
-import java.time.LocalDateTime;
-import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fisherconnect.entity.User;
+import com.fisherconnect.repository.UserRepository;
+import com.fisherconnect.security.JwtUtil;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -30,7 +35,7 @@ public class AuthController {
         user.setPassword(encoder.encode(user.getPassword()));
         user.setCreatedAt(LocalDateTime.now().toString());
         userRepo.save(user);
-        return ResponseEntity.ok("User registered");
+        return ResponseEntity.ok(Map.of("message", "User registered"));
     }
 
     @PostMapping("/login")
