@@ -1886,8 +1886,12 @@
                     const listing = db.listings.find(
                       (l) => l.id === o.listingId,
                     );
-                    const buyer = db.users.find((u) => u.id === o.buyerId);
-                    const seller = db.users.find((u) => u.id === o.sellerId);
+                    const buyer = db.users.find(
+                      (u) => String(u.id) === String(o.buyerId),
+                    );
+                    const seller = db.users.find(
+                      (u) => String(u.id) === String(o.sellerId),
+                    );
                     return `<tr><td>#${o.id}</td><td>${listing ? escapeHtml(listing.species) : "N/A"}</td><td>${o.quantityKg}kg</td><td>${formatCurrency(o.totalPrice)}</td><td>${viewType === "seller" ? `Buyer: ${buyer ? escapeHtml(buyer.name) : "N/A"}` : `Seller: ${seller ? escapeHtml(seller.name) : "N/A"}`}</td><td><span class="badge ${o.status === "COMPLETED" ? "badge-success" : o.status === "CANCELLED" ? "badge-danger" : o.status === "CONFIRMED" ? "badge-info" : "badge-pending"}">${o.status}</span></td><td>${viewType === "seller" && o.status === "PENDING" ? `<button class="btn btn-sm btn-teal" onclick="window._updateOrderStatus(${o.id},'CONFIRMED')">Confirm</button>` : ""}${viewType === "seller" && o.status === "CONFIRMED" ? `<button class="btn btn-sm btn-teal" onclick="window._updateOrderStatus(${o.id},'COMPLETED')">Mark Complete</button>` : ""}${o.status === "PENDING" ? `<button class="btn btn-sm btn-danger" onclick="window._updateOrderStatus(${o.id},'CANCELLED')">Cancel</button>` : ""}</td><td><button class="btn btn-sm btn-outline" onclick="window._viewInvoice(${o.id})">Invoice</button></td></tr>`;
                   })
                   .join("")
