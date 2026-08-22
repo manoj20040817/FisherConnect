@@ -2475,7 +2475,12 @@
             id: db.nextId.orders++,
             listingId,
             buyerId: getUserId(),
+            buyerName: currentUser ? currentUser.name : "N/A",
             sellerId: listing.userId,
+            sellerName: (() => {
+              const seller = db.users.find((u) => u.id === listing.userId);
+              return seller ? seller.name : "N/A";
+            })(),
             quantityKg: qty,
             totalPrice,
             status: "PENDING",
