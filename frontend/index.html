@@ -1877,7 +1877,7 @@
             orders = db.orders.filter((o) => o.buyerId === uid).reverse();
           }
           return `
-          <div class="card"><div class="card-header"><h3>📦 ${viewType === "seller" ? "Orders Received" : "My Orders"}</h3></div> 
+          <div class="card"><div class="card-header"><h3>📦 ${viewType === "seller" ? "Orders Received" : "My Orders"}</h3></div>
           <table>${
             orders.length === 0
               ? "<tr><td>No orders</td></tr>"
